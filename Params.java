@@ -1,6 +1,6 @@
 public class Params {
     public static void main(String[] args) {
-        int ans = sum(39,34);
+        int ans = sum(33,34);
 
         System.out.println(ans);
     }
