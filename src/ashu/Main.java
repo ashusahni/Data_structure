@@ -1,17 +1,33 @@
 package ashu;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
+
 public class Main {
+
     public static void main(String[] args) {
+        int [][] array = {
+                {34,32,45,6},
+                {33,12,5},
+                {36,66,35,76}
+        };
 
-        int[] rolno = new  int[5];
-    System.out.println(rolno[0]);
+        Scanner in = new Scanner(System.in);
+        int target = in.nextInt();
+        int[] ans = search(array,target);
+        System.out.println(Arrays.toString(ans));
 
-        //or
-        int[] rollno1 = {34,34,1234,5,2,431};
-        System.out.println(rollno1[2]);
-
-        String[] name = new String[5];
     }
 
+    static int[] search (int[][] array,int target) {
+        for (int row=0; row < array.length; row ++){
+            for (int col = 0; col < array[row].length; col++){
+                if(array[row][col]==target){
+                    return new int[] {row,col};
+                }
+            }
+        }               return  new int[]{-1,-  1};
+    }
 
 }
