@@ -1,4 +1,4 @@
-package ashu;
+package linear_search;
 
 import java.util.Arrays;
 

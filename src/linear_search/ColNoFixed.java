@@ -1,4 +1,4 @@
-package ashu;
+package linear_search;
 
 public class ColNoFixed {
     public static void colnofixed(String[] args){

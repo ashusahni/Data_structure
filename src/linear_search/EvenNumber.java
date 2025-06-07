@@ -1,6 +1,4 @@
-package ashu;
-
-import com.sun.source.tree.BreakTree;
+package linear_search;
 
 public class EvenNumber   {
     public static void main(String[] args) {
