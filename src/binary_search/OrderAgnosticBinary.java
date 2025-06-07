@@ -17,7 +17,7 @@ public class OrderAgnosticBinary {
         if(arr[start] < arr[end]){
             isAsc = true;
         } else {
-            isAsc =false
+            isAsc =false;
         }
 
     }
