@@ -19,6 +19,7 @@ public class OrderAgnosticBinary {
         } else {
             isAsc =false;
         }
-
+return  -1;
     }
+
 }
