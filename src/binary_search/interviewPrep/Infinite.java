@@ -1,7 +1,7 @@
 public class Infinite {
 
     public static void main(String[] args) {
-        int[] arr = new int[100000]; // simulate "infinite" array
+        int[] arr = new int[10000]; // simulate "infinite" array
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i * 2; // sorted even numbers
         }
