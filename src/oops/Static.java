@@ -9,9 +9,5 @@ public class Static {
         b = a * 4;
     }
 
-    public static void main(String[] args) {
-        Static obj = new Static();
-        System.out.println(Static.a + "     " + Static.b);
-    }
-
+   
 }
