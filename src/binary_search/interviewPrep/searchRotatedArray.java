@@ -1,45 +1,39 @@
 package binary_search.interviewPrep;
 
-public class searchRotatedArray {
-    public static void main(String[] args) {
-        int[] arr = {21,25,26,3,4,6,7,9,12,15,16,};
-        int target = 21;
-        int targetIndex = search(arr,target);
-        System.out.println(targetIndex);
-    }
+class searchRotatedArray {
+    public boolean search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
 
-    static int search (int[] arr, int target){
-        int start =0;
-        int end = arr.length-1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-        while (start <=end){
-            int mid = start + (end - start) /2 ;
-
-            if (arr[mid]== target){
-                return  mid;
+            if (nums[mid] == target) {
+                return true;
             }
 
-
-        if(arr[start]<=arr[mid]) {
-            //if target lies on left sorted
-            if(target >= arr[start] && target < arr[mid] ){
-                end = mid-1;
-            }else {
-                start = mid+1;
+            // Handle duplicates
+            if (nums[left] == nums[mid] && nums[mid] == nums[right]) {
+                left++;
+                right--;
+            }
+            // Left half is sorted
+            else if (nums[left] <= nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+            // Right half is sorted
+            else {
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
         }
 
-        if(arr[mid] <= arr[end]) {
-            //if target lies on right half
-            if(target >= arr[mid] && target < arr[end]){
-                start = mid+1;
-            }else{
-                end = mid-1;
-            }
-
-        }
-
-        }
-    return -1;
+        return false;
     }
 }
